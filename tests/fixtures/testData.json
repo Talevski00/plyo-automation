@@ -1,0 +1,32 @@
+{
+  "locations": ["London", "Manchester", "Liverpool", "North London", "Cardiff"],
+  "priceRanges": [
+    { "min": 200000, "max": 500000 },
+    { "min": 100000, "max": 300000 }
+  ],
+  "bedroomFilters": {
+    "minBedrooms": [1, 2, 3, 4],
+    "maxBedrooms": [2, 3, 4, 5]
+  },
+  "bathroomFilters": [1, 2, 3],
+  "propertyTypes": [
+    "Show all",
+    "Detached",
+    "Semi-detached",
+    "Terraced",
+    "Flats",
+    "Bungalows",
+    "Farms/land",
+    "Park homes"
+  ],
+  "invalidInputs": ["!@#$%^&*()?", "", "Bitola", "329416416", "London65964", "Manchester?@#!"],
+  "validInputs": [
+    { "location": "London", "priceRange": { "min": 200000, "max": 500000 }, "minBedrooms": 2, "maxBedrooms": 4, "bathrooms": 2, "propertyType": "Flats" },
+    { "location": "Liverpool", "priceRange": { "min": 150000, "max": 400000 }, "minBedrooms": 1, "maxBedrooms": 3, "bathrooms": 1, "propertyType": "Detached" },
+    { "location": "Glasgow", "priceRange": { "min": 100000, "max": 250000 }, "minBedrooms": 2, "maxBedrooms": 4, "bathrooms": 2, "propertyType": "Semi-detached" },
+    { "location": "Edinburgh", "priceRange": { "min": 180000, "max": 450000 }, "minBedrooms": 3, "maxBedrooms": 5, "bathrooms": 2, "propertyType": "Bungalows" },
+    { "location": "Cardiff", "priceRange": { "min": 120000, "max": 350000 }, "minBedrooms": 2, "maxBedrooms": 3, "bathrooms": 1, "propertyType": "Terraced" },
+    { "location": "Bristol", "priceRange": { "min": 250000, "max": 600000 }, "minBedrooms": 1, "maxBedrooms": 2, "bathrooms": 1, "propertyType": "Flats" },
+    { "location": "Sheffield", "priceRange": { "min": 200000, "max": 500000 }, "minBedrooms": 2, "maxBedrooms": 4, "bathrooms": 2, "propertyType": "Detached" }
+  ]
+}
