@@ -2,7 +2,13 @@
   "name": "plyo-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",    
+    "test:headed": "npx playwright test --headed", 
+    "test:debug": "npx playwright test --debug",
+    "test:property-search": "npx playwright test tests/specs/propertySearch.spec.ts",
+    "test:property-details": "npx playwright test tests/specs/propertyDetails.spec.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Talevski00/plyo-automation.git"

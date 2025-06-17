@@ -3,26 +3,31 @@ import { BasePage } from "./BasePage";
 
 export class HomePage extends BasePage {
     readonly searchField: Locator;
-    readonly searchButton: Locator;
     readonly forSaleButton: Locator;
     readonly toRentButton: Locator;
-    readonly housePricesButton: Locator;
+    defaultWaitTimeout: number;
 
     constructor(page: Page) {
         super(page);
-        this.searchField = this.page.getByLabel('Enter a location');
-        this.searchButton = this.page.getByTestId('search-button')
+        this.searchField = this.page.getByTestId('typeahead-searchbox');
+        this.forSaleButton = this.page.locator('//button[@data-testid="forSaleCta"]');
+        this.toRentButton = this.page.getByTestId('toRentCta');
+        this.defaultWaitTimeout = 2000;
     }
 
-    async selectTab(tab: string): Promise<void> {
-        const tabToSelect = this.page.getByText(tab, { exact: true }).locator('aria-selected=false');
-        await this.elementShouldBeVisible(tabToSelect);
-        await this.clickElement(tabToSelect);
-    }
-
-    async searchLocation(location: string): Promise<void> {
+    async searchLocation(location: string, type: string): Promise<void> {
+        await this.waitForElementVisible(this.searchField);
         await this.fillInput(this.searchField, location);
-        await this.clickElement(this.searchButton);
+        if (type === 'forSale') {
+            await this.page.waitForTimeout(this.defaultWaitTimeout);
+            await expect(this.forSaleButton).toBeVisible();
+            await this.clickElement(this.forSaleButton);
+        } else if (type === 'toRent') {
+            await this.page.waitForTimeout(this.defaultWaitTimeout);
+            await expect(this.toRentButton).toBeVisible();
+            await this.clickElement(this.toRentButton);
+        } else {
+            throw new Error('Invalid search type. Use "forSale" or "toRent".');
+        }
     }
-
 }
