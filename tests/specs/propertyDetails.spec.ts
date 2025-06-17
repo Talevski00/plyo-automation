@@ -3,7 +3,7 @@ import { HomePage } from '../pages/HomePage.ts';
 import { SearchPage } from '../pages/SearchPage.ts';
 import { BasePage } from '../pages/BasePage.ts';
 import { PropertyListPage } from '../pages/PropertyListPage.ts';
-import { PropertyDetailsPage } from '../pages/propertyDetailsPage.ts'
+import { PropertyDetailsPage } from '../pages/PropertyDetailsPage.ts'
 import { ContactFormPage } from '../pages/ContactFormPage.ts';
 import { Assert } from '../utils/helpers.ts';
 
