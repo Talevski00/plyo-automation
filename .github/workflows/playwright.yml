@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       testFile:
-        description: 'Path to specific test file (e.g. /tests/specs/propertyDetails.spec.ts)'
+        description: '/tests/specs/*.spec.ts)'
         required: false
         default: ''
       browser:
@@ -42,7 +42,7 @@ jobs:
 
       - name: Run tests
         run: |
-          npx playwright test ${{ github.event.inputs.testFile }} --project=${{ github.event.inputs.browser }}
+          npx playwright test
 
       - name: Upload Playwright Report
         if: always()
