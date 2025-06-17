@@ -34,11 +34,11 @@ export class PropertyListPage extends BasePage {
     constructor(page: Page) {
         super(page);
         this.location = this.page.locator('#ta_searchInput');
-        this.radius = this.page.getByTestId('filters-radius-select');
-        this.minPrice = this.page.locator('#minPrice');
-        this.maxPrice = this.page.locator('#maxPrice');
-        this.minBedrooms = this.page.locator('#minBeds');
-        this.maxBedrooms = this.page.locator('#maxBeds');
+        this.radius = this.page.locator('//select[@id="radius-select"]');
+        this.minPrice = this.page.locator('//select[@id="minPrice"]');
+        this.maxPrice = this.page.locator('//select[@id="maxPrice"]');
+        this.minBedrooms = this.page.locator('//select[@id="minBeds"]');
+        this.maxBedrooms = this.page.locator('//select[@id="maxBeds"]');
         this.searchResultTitle = this.page.getByTestId('search-description'); 
         this.resultsCount = this.page.locator('[class*="ResultsCount_resultsCount_"] > p');
         this.propertyCard = this.page.locator('.propertyCard-link');
