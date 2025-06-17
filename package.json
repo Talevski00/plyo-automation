@@ -7,7 +7,8 @@
     "test:headed": "npx playwright test --headed", 
     "test:debug": "npx playwright test --debug",
     "test:property-search": "npx playwright test tests/specs/propertySearch.spec.ts",
-    "test:property-details": "npx playwright test tests/specs/propertyDetails.spec.ts"
+    "test:property-details": "npx playwright test tests/specs/propertyDetails.spec.ts",
+    "test:report": "npx playwright show-report"
   },
   "repository": {
     "type": "git",

@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { SearchPage } from '../pages/SearchPage';
-import { BasePage } from '../pages/BasePage';
-import { PropertyListPage } from '../pages/PropertyListPage';
+import { HomePage } from '../pages/HomePage.ts';
+import { SearchPage } from '../pages/SearchPage.ts';
+import { BasePage } from '../pages/BasePage.ts';
+import { PropertyListPage } from '../pages/PropertyListPage.ts';
 
 import testData from '../fixtures/testData.json';
 

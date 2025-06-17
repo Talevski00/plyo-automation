@@ -4,6 +4,21 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+  workflow_dispatch:
+    inputs:
+      testFile:
+        description: '/tests/specs/propertyDetails.spec.ts'
+        required: false
+        default: ''
+      teestFile:
+        description: '/tests/specs/propertySearch.spec.ts'
+        required: false
+        default: ''
+      browser:
+        description: 'Browser to run on (chromium, firefox, edge)'
+        required: false
+        default: 'chromium'
 jobs:
   test:
     timeout-minutes: 60
