@@ -1,5 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
-import { BasePage } from "./BasePage";
+import { BasePage } from "./BasePage.ts";
 
 export class HomePage extends BasePage {
     readonly searchField: Locator;
