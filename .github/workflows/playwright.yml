@@ -4,7 +4,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-
+env:
+  BASE_URL: ${{ vars.BASE_URL }}
+  
   workflow_dispatch:
     inputs:
       testFile:
