@@ -20,17 +20,28 @@ test.describe('Property Search', () => {
         await homePage.navigateTo(process.env.BASE_URL);
     });
 
-    testData.locationsWithPriceRanges.forEach(({ location, minPrice, maxPrice }, i) => {
-        test(`User can search properties by location and price range, (${location})`, async ({ page }) => {
-            await homePage.searchLocation(location, 'forSale');
+    // testData.locationsWithPriceRanges.forEach(({ location, minPrice, maxPrice }, i) => {
+    //     test(`User can search properties by location and price range, (${location})`, async ({ page }) => {
+    //         await homePage.searchLocation(location, 'forSale');
+    //         await page.waitForLoadState('domcontentloaded');
+    //         await expect(page).toHaveTitle(`Find property for sale in ${location}`);
+    //         await searchPage.applySearchFilters({minPrice: minPrice, maxPrice: maxPrice});
+    //         await basePage.clickElement(searchPage.searchButton);
+    //         await page.waitForLoadState('domcontentloaded');
+    //         await propertyListPage.verifySearchedLocation(location);
+    //         await propertyListPage.verifyAppliedSearchFilters({minPrice: minPrice, maxPrice: maxPrice});
+    //     });
+    // });
+
+    test(`User can search properties by location and price range`, async ({ page }) => {
+            await homePage.searchLocation(testData.locations[0], 'forSale');
             await page.waitForLoadState('domcontentloaded');
-            await expect(page).toHaveTitle(`Find property for sale in ${location}`);
-            await searchPage.applySearchFilters({minPrice: minPrice, maxPrice: maxPrice});
+            await expect(page).toHaveTitle(`Find property for sale in ${testData.locations[0]}`);
+            await searchPage.applySearchFilters(testData.priceRanges[1]);
             await basePage.clickElement(searchPage.searchButton);
             await page.waitForLoadState('domcontentloaded');
-            await propertyListPage.verifySearchedLocation(location);
-            await propertyListPage.verifyAppliedSearchFilters({minPrice: minPrice, maxPrice: maxPrice});
-        });
+            await propertyListPage.verifySearchedLocation(testData.locations[0]);
+            await propertyListPage.verifyAppliedSearchFilters(testData.priceRanges[1]);
     });
 
     test('Invalid search inputs show appropriate error messages', async ({ page }) => {

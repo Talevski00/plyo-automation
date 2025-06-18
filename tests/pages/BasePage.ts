@@ -85,7 +85,7 @@ export class BasePage {
       await element.waitFor({ state: 'visible' });
       const isChecked = await element.isChecked();
       if (isChecked !== shouldCheck) {
-        await element.check();
+        await element.click();
       }
     } catch (error) {
       console.error(`Error while selecting checkbox: ${error}`);

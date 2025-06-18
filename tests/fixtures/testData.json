@@ -20,6 +20,6 @@
     { "minPrice": "30000", "maxPrice": "1000000" }
   ],
 
-  "contactFormData": { "firstName": "Andrej", "lastName": "Talevski", "phone": "+447700900123", "email": "andrej.t@test.com", "country": "MK", "postcode": "7000", "message": "Im interested in this property and would like to have more details.", "propertyToSell": "no", "propertyToLet": "pr_rent_to_purchase", "propertyValued": true }
+  "contactFormData": { "firstName": "Andrej", "lastName": "Talevski", "phone": "447700900123", "email": "andrej.t@test.com", "country": "MK", "postcode": "7000", "message": "Im interested in this property and would like to have more details.", "propertyToSell": "no", "propertyToLet": "pr_rent_to_purchase", "propertyValued": true }
 
 }
