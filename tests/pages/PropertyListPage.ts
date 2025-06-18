@@ -64,12 +64,12 @@ export class PropertyListPage extends BasePage {
             await expect(this.radius).toHaveValue(filters.searchRadius);
         }
         if(filters.minPrice){
-            await this.waitForElementVisible(this.minPrice);
-            await expect(this.minPrice).toHaveValue(filters.minPrice);
+            await this.waitForElementVisible(this.minPrice.first());
+            await expect(this.minPrice.first()).toHaveValue(filters.minPrice);
         }
         if(filters.maxPrice) {
-            await this.waitForElementVisible(this.maxPrice);
-            await expect(this.maxPrice).toHaveValue(filters.maxPrice);
+            await this.waitForElementVisible(this.maxPrice.first());
+            await expect(this.maxPrice.first()).toHaveValue(filters.maxPrice);
         }
         if(filters.minBedrooms) {
             await this.waitForElementVisible(this.minBedrooms);
