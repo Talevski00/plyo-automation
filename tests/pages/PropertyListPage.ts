@@ -35,8 +35,8 @@ export class PropertyListPage extends BasePage {
         super(page);
         this.location = this.page.locator('#ta_searchInput');
         this.radius = this.page.locator('//select[@id="radius-select"]');
-        this.minPrice = this.page.locator('//select[@id="minPrice"]');
-        this.maxPrice = this.page.locator('//select[@id="maxPrice"]');
+        this.minPrice = this.page.getByLabel('Min Price');
+        this.maxPrice = this.page.getByLabel('Max Price');
         this.minBedrooms = this.page.locator('//select[@id="minBeds"]');
         this.maxBedrooms = this.page.locator('//select[@id="maxBeds"]');
         this.searchResultTitle = this.page.getByTestId('search-description'); 
